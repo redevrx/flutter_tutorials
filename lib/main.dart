@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:game/game.dart';
 import 'package:get_it/get_it.dart';
 import 'package:neversitup_app/core/theme/theme.dart';
 import 'package:neversitup_app/di/di.dart';
@@ -20,14 +21,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: lightTheme,
-      home: MultiProvider(
-        providers: [
-          ChangeNotifierProvider<ProductProvider>(
-            create: (context) => GetIt.instance.get(),
-          )
-        ],
-        child: const NeversitupApp(),
-      ),
+      home: const GameHome(),
+      // home: MultiProvider(
+      //   providers: [
+      //     ChangeNotifierProvider<ProductProvider>(
+      //       create: (context) => GetIt.instance.get(),
+      //     )
+      //   ],
+      //   child: const NeversitupApp(),
+      // ),
     );
   }
 }
